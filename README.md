@@ -6,3 +6,12 @@ Aplicación móvil híbrida para recomendación y búsqueda de películas. Reali
 - Typescript: lenguaje de programación desarrollado por Microsoft que se basa en JavaScript. TypeScript agrega características adicionales a JavaScript, incluyendo tipado estático opcional y características de programación orientada a objetos.
 - Html: lenguaje estándar utilizado para crear y estructurar contenido en la web.
 - Scss: preprocesador de CSS que extiende la funcionalidad del lenguaje permitiendo el uso de variables, anidamiento de selectores, mixins, etc.
+## Comandos
+Instalar las dependencias del proyecto
+```sh
+npm install
+```
+Al momento de desarrollar, generar un Angular Live Development Server
+```sh
+npm run start
+```
