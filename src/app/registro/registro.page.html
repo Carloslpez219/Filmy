@@ -1,0 +1,58 @@
+<ion-content>
+  <div class="container">
+    <div class="header">
+    </div>
+    <ion-card class="body animate__animated animate__bounceInDown" style="    margin-top: -14px;">
+      <div class="img">
+        <img src="../../assets/img/Logo Filmy.png" class="animate__animated animate__bounce">
+      </div>
+      <br>
+        <ion-list>
+          <ion-item mode="md">
+            <ion-icon slot="start" name="person-circle-outline"></ion-icon>
+            <ion-input placeholder="Name" type="name" clearOnEdit="true" clearInput="true" [(ngModel)]="user">
+            </ion-input>
+          </ion-item>
+          <ion-item mode="md">
+            <ion-icon slot="start" name="person-circle-outline"></ion-icon>
+            <ion-input placeholder="Lastname" type="name" clearOnEdit="true" clearInput="true" [(ngModel)]="last">
+            </ion-input>
+          </ion-item>
+          <ion-item mode="md">
+            <ion-icon slot="start" name="at-outline"></ion-icon>
+            <ion-input placeholder="Mail" type="mail" clearOnEdit="true" clearInput="true" [(ngModel)]="mail">
+            </ion-input>
+          </ion-item>
+          <ion-item mode="md">
+            <ion-icon slot="start" name="code-working-outline"></ion-icon>
+            <ion-input placeholder="Password" type="password" clearOnEdit="true" clearInput="true" [(ngModel)]="pass">
+            </ion-input>
+          </ion-item>
+          <ion-item mode="md">
+            <ion-icon slot="start" name="hourglass-outline"></ion-icon>
+            <ion-input placeholder="Years old" type="name" clearOnEdit="true" clearInput="true" [(ngModel)]="edad">
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Gender</ion-label>
+            <ion-select placeholder="Select gender" (ionChange)="select($event)" color="dark" interface="popover">
+              <ion-select-option value="F">Female</ion-select-option>
+              <ion-select-option value="M">Male</ion-select-option>
+              <ion-select-option value="O">Otros</ion-select-option>
+            </ion-select>
+        </ion-item>
+        </ion-list>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-button expand="block" class="button-1" (click)="register()">Register
+                <ion-icon slot="start" color="white" name="enter-outline"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <br>
+        <p class="ion-text-center" style="margin-top: 15px; color: rgb(175, 174, 174); font-size: 16px;">¿Ya tienes cuenta?&nbsp;&nbsp;<a (click)="goLogin()" style="color: #03dada;">Inicia sesión</a></p>
+    </ion-card>
+  </div>
+</ion-content>

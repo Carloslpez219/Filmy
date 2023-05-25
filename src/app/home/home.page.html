@@ -1,0 +1,105 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="menuId" class="icon-menu" style="color:#3197f7;"></ion-menu-button>
+    </ion-buttons>
+    <div style="display: flex; justify-content: center;">
+      <ion-img src="../../assets/img/Logo Filmy.png" style="max-width: 45%;
+      height: auto;
+      padding: 13px;"></ion-img>
+    </div>    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="viewEntered">
+
+  <ion-list-header>
+    <ion-label>New releases</ion-label>
+  </ion-list-header>
+  <ion-card style="margin-bottom: -15px;" class="animate__animated animate__bounceInLeft">
+    <ion-slides [options]="slideOpts">
+      <ion-slide *ngFor="let pelicula of pelicularPopulares" (click)="presentModalPelicula(pelicula)">
+        <ion-row>
+            <ion-card>
+              <img src='{{pelicula.poster_path | imagen}}' class="poster"/>
+            </ion-card>
+        </ion-row>
+      </ion-slide>
+      <ion-slide class="slide-mas" (click)="cargarMas()">
+        <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+          <ion-button expand="full" size="full" class="btn-mas">
+            <ion-icon name="add" slot="icon-only"></ion-icon>
+          </ion-button>
+        </div>        
+      </ion-slide>
+    </ion-slides>
+  </ion-card>
+
+  <ion-list-header>
+    <ion-label>Top rated</ion-label>
+  </ion-list-header>
+  <ion-card style="margin-top: -5px; margin-bottom: -15px;" class="animate__animated animate__bounceInLeft">
+    <ion-slides [options] = 'slideOpts'>
+      <ion-slide *ngFor="let pelicula of peliculasRecientes">
+        <ion-card (click)="presentModalPelicula(pelicula)">
+          <img src='{{pelicula.backdrop_path | imagen }}' />
+          <ion-card-content>
+            <ion-card-title style="font-size: 18px;">{{pelicula.title}}</ion-card-title>
+            <p>
+    
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </ion-card>
+
+  <ion-list-header>
+    <ion-label>Trending last 7 days</ion-label>
+  </ion-list-header>
+  <ion-card style="margin-bottom: -15px;" class="animate__animated animate__bounceInLeft">
+    <ion-slides [options]="slideOpts">
+      <ion-slide *ngFor="let pelicula of pelicularTrend" (click)="presentModalPelicula(pelicula)">
+        <ion-row>
+            <ion-card>
+              <img src='{{pelicula.poster_path | imagen}}' class="poster"/>
+            </ion-card>
+        </ion-row>
+      </ion-slide>
+    </ion-slides>
+  </ion-card>
+
+  <ion-list-header>
+    <ion-label>Next releases</ion-label>
+  </ion-list-header>
+  <ion-card style="margin-bottom: -15px;" class="animate__animated animate__bounceInLeft">
+    <ion-slides [options]="slideOpts">
+      <ion-slide *ngFor="let pelicula of pelicularNext" (click)="presentModalPelicula(pelicula)">
+        <ion-row>
+            <ion-card>
+              <img src='{{pelicula.poster_path | imagen}}' class="poster"/>
+            </ion-card>
+        </ion-row>
+      </ion-slide>
+    </ion-slides>
+  </ion-card>
+
+
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button color="light" class="width">
+      <ion-icon name="apps"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">  
+      <ion-fab-button (click)="logout()" color="light" class="width" style="zoom: 1.3;">
+        <ion-icon name="log-out-outline" style="zoom:1.2;"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button routerLink="/perfil" color="light" class="width" style="zoom: 1.3;">
+        <ion-icon name="person-circle" style="zoom:1.2;"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button routerLink="/search" color="light" class="width" style="zoom: 1.3;">
+        <ion-icon name="search" style="zoom:1.2;"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+</ion-content>
