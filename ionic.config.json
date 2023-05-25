@@ -3,5 +3,18 @@
   "integrations": {
     "capacitor": {}
   },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    },
+    "Orientation": {
+      "preferences": [
+        {
+          "name": "orientation",
+          "value": "portrait"
+        }
+      ]
+    }
+  },
   "type": "angular"
 }
